@@ -1,0 +1,11 @@
+spydy@dolos:~/workspace/frontend-example-docker$ sudo docker images
+REPOSITORY                                           TAG                 IMAGE ID            CREATED             SIZE
+frontend-example-3.4                                 latest              5d9a88ae47c9        23 seconds ago      236MB
+backend-example-3.4                                  latest              7a69408cd84a        2 minutes ago       140MB
+
+frontend-example-3.3                                 latest              fe99c690fada        2 hours ago         426MB
+backend-example-3.3                                  latest              cc13ef30a55a        2 hours ago         330MB
+
+frontend-example-3.1                                 latest              ff5d621a136d        12 hours ago        425MB
+backend-example-3.1                                  latest              10033c1c7f9a        12 hours ago        329MB
+

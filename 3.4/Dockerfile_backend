@@ -1,0 +1,16 @@
+FROM node:10-alpine
+
+EXPOSE 8000
+ENV FRONT_URL=http://localhost
+
+WORKDIR /workspace
+COPY . /workspace
+
+RUN npm install && \
+    adduser -D backend && \
+    chown -R backend:backend $(pwd)
+
+USER backend
+
+CMD [ "npm", "start" ]
+

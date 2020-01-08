@@ -1,0 +1,15 @@
+FROM node:10-alpine
+
+EXPOSE 5000
+ENV API_URL=http://localhost:8000
+
+WORKDIR /workspace
+COPY . /workspace
+
+RUN npm install && \
+    adduser -D frontend && \
+    chown -R frontend:frontend $(pwd)
+
+USER frontend
+
+CMD [ "npm", "start" ]
