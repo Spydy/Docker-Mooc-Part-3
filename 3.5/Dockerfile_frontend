@@ -1,0 +1,18 @@
+FROM node:10-alpine as build-stage
+
+EXPOSE 5000
+ENV API_URL=http://localhost:8000
+
+WORKDIR /workspace
+COPY . /workspace
+
+RUN npm install && \
+    adduser -D frontend && \
+    chown -R frontend:frontend $(pwd)
+
+USER frontend
+
+RUN npm run build 
+
+FROM nginx
+COPY --from=build-stage /workspace/dist /usr/share/nginx/html
